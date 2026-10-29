@@ -1,530 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lottone Portfolio</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/portfolio.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="현장의 데이터를 서비스로 연결하는 백엔드 개발자 복권일. MES, 실시간 통신, 시스템 연동 경험과 프로젝트를 소개합니다.">
+  <meta name="theme-color" content="#f7f8fb">
+  <title>복권일 — 백엔드 개발자</title>
+  <link rel="stylesheet" href="css/renewal.css">
+  <script src="js/renewal.js" defer></script>
 </head>
 <body>
-  <div class="terminal-container">
-    <div class="terminal-header">
-      <div class="terminal-dots">
-        <div class="terminal-dot red"></div>
-        <div class="terminal-dot yellow"></div>
-        <div class="terminal-dot green"></div>
-      </div>
-      <div class="terminal-title">Portfolio</div>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="identity" href="index.html" aria-label="복권일 포트폴리오 홈"><span class="identity-symbol" aria-hidden="true">k.</span><span>복권일<span class="identity-caption">PORTFOLIO</span></span></a>
+      <nav class="main-nav" aria-label="주요 메뉴"><a href="#experience">실무 경험</a><a href="#projects">프로젝트</a><a href="#skills">기술과 교육</a><a href="#contact" class="nav-contact">연락하기 <span aria-hidden="true">↗</span></a></nav>
     </div>
-    
-    <div class="terminal-content">
-      <aside class="sidebar">
-        <nav>
-          <a href="#hero" class="active">
-            <span class="nav-icon">></span>
-            <span class="nav-text">소개</span>
-          </a>
-          <a href="#projects">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트</span>
-          </a>
-          <a href="#skills">
-            <span class="nav-icon">></span>
-            <span class="nav-text">기술</span>
-          </a>
-          <a href="#experience">
-            <span class="nav-icon">></span>
-            <span class="nav-text">경력</span>
-          </a>
-          <a href="#certification">
-            <span class="nav-icon">></span>
-            <span class="nav-text">자격증</span>
-          </a>
-          <a href="#contact">
-            <span class="nav-icon">></span>
-            <span class="nav-text">연락처</span>
-          </a>
-        </nav>
-      </aside>
-      
-      <div class="main-content">
-        <main class="shell">
-          <section id="hero" class="hero-section">
-            <div class="hero-content">
-              <div class="hero-text">
-                <p class="hero-kicker">About</p>
-                <h1 class="hero-name">복권일</h1>
-                <p class="hero-role">백엔드 개발자</p>
-                
-                <p class="hero-description">
-                  백엔드로 데이터 흐름을 설계하고<br>
-                  사용자 관점의 사용성을 함께 고민하는<br>
-                  문제 해결에 끝까지 집중하는 개발자입니다
-                </p>
-                <div class="hero-links">
-                  <button type="button" class="hero-link contact-copy" data-copy="lottone27@naver.com" aria-label="이메일 주소 복사">
-                    <span class="link-icon">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <rect x="3" y="5" width="18" height="14" rx="2" stroke="#6B9EFF" stroke-width="2" fill="none"/>
-                        <path d="M3 7L12 13L21 7" stroke="#6B9EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <span class="copy-text">lottone27@naver.com</span>
-                  </button>
-                  <a href="https://github.com/Lottone27" target="_blank" rel="noreferrer noopener" class="hero-link">
-                    <span class="link-icon">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.865 20.17 8.839 21.49C9.339 21.58 9.521 21.27 9.521 21C9.521 20.77 9.511 19.98 9.511 19.15C7 19.61 6.35 18.53 6.15 17.97C6.037 17.68 5.55 16.8 5.125 16.57C4.775 16.4 4.275 15.94 5.115 15.93C5.9 15.92 6.462 16.64 6.65 16.95C7.55 18.43 8.988 18.01 9.562 17.73C9.65 17.08 9.912 16.65 10.2 16.38C7.975 16.11 5.65 15.24 5.65 11.47C5.65 10.46 6.037 9.62 6.675 8.97C6.575 8.7 6.225 7.66 6.775 6.32C6.775 6.32 7.612 6.05 9.525 7.37C10.325 7.13 11.175 7.01 12.025 7.01C12.875 7.01 13.725 7.13 14.525 7.37C16.437 6.04 17.275 6.32 17.275 6.32C17.825 7.66 17.475 8.7 17.375 8.97C18.012 9.62 18.4 10.45 18.4 11.47C18.4 15.25 16.063 16.11 13.838 16.38C14.2 16.7 14.513 17.31 14.513 18.26C14.513 19.6 14.5 20.68 14.5 21C14.5 21.27 14.688 21.59 15.188 21.49C19.138 20.16 22 16.41 22 12C22 6.477 17.523 2 12 2Z" fill="#6B9EFF"/>
-                      </svg>
-                    </span>
-                    <span>GitHub</span>
-                  </a>
-                  <a href="https://lottone.tistory.com" target="_blank" rel="noreferrer noopener" class="hero-link">
-                    <span class="link-icon">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <circle cx="6" cy="6" r="3.5" fill="#FF7600"/>
-                        <circle cx="18" cy="6" r="3.5" fill="#FF7600"/>
-                        <circle cx="6" cy="18" r="3.5" fill="#FF7600"/>
-                        <circle cx="18" cy="18" r="3.5" fill="#FF7600"/>
-                      </svg>
-                    </span>
-                    <span>Blog</span>
-                  </a>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="overline">JAVA · SPRING · BACKEND</p>
+        <h1 id="intro-title">백엔드 개발자<br><span>복권일</span>입니다.</h1>
+        <p class="hero-description">현장의 데이터를 서비스로 연결합니다.<br>안정적인 데이터 흐름을 설계하고,<br class="mobile-only"> 실제 사용자의 불편을 해결합니다.</p>
+        <div class="hero-actions"><a class="button button-primary" href="mailto:lottone27@naver.com">이메일로 연락하기 <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/Lottone27" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="text-link" href="https://lottone.tistory.com" target="_blank" rel="noopener noreferrer">Blog <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="hero-aside"><figure class="portrait"><img src="image/bok.jpeg" alt="바다 앞에 서 있는 복권일" width="280" height="320" fetchpriority="high"><figcaption><span class="status-dot" aria-hidden="true"></span> 현장과 사용자를 이해하는 개발자</figcaption></figure></div>
+      <div class="intro-context"><p><span class="context-label">현재</span><strong>3H솔루션 · 백엔드 개발</strong><span class="context-date">2026.05 — 재직 중</span></p><p><span class="context-label">주요 경험</span><strong>SK하이닉스 MES 개발</strong></p></div>
+    </section>
+
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading"><div class="section-title-group"><p class="overline">EXPERIENCE</p><h2 id="experience-title">실무 경험</h2></div><p class="section-purpose">회사에서 맡은 업무와 기술적으로 해결한 문제를 소개합니다.</p></div>
+        <article class="career" aria-label="현재 경력: 3H솔루션">
+          <p class="record-label">현재 경력</p>
+          <header class="career-header"><div><h3>3H솔루션</h3><p>백엔드 개발자 <span class="separator" aria-hidden="true">·</span> 2026.05 — 재직 중</p></div><span class="career-domain">SK하이닉스 · MES</span></header>
+          <div class="career-intro"><h4>SK하이닉스 MES 개발</h4><p>SK하이닉스 MES 개발 업무를 담당하고 있습니다.</p></div>
+        </article>
+        <article class="career">
+          <p class="record-label">이전 경력</p>
+          <header class="career-header"><div><h3>비지언스</h3><p>백엔드 개발자 <span class="separator" aria-hidden="true">·</span> 2025.01 입사</p></div><span class="career-domain">스마트팩토리 · MES</span></header>
+          <div class="career-intro"><h4>생산 현장과 웹 서비스를 연결하는 백엔드</h4><p>Spring Boot와 MyBatis를 기반으로 생산 관리 시스템을 구축하고 고도화했습니다. PLC·RFID 데이터 연동부터 실시간 모니터링, 현장용 태블릿 화면까지 개발했습니다.</p><ul class="tech-list" aria-label="실무 사용 기술"><li>Java</li><li>Spring Boot</li><li>MyBatis</li><li>WebSocket</li><li>Thymeleaf</li></ul></div>
+          <div class="contributions">
+            <article class="contribution"><div class="contribution-heading"><span class="topic">실시간 통신</span><h4>반복 조회를 줄이고,<br class="desktop-only"> 필요한 순간에 데이터를 전달했습니다.</h4></div><div class="contribution-content"><div class="technical-transition" aria-label="HTTP Polling에서 WebSocket으로 전환"><span>HTTP Polling</span><span class="transition-arrow" aria-hidden="true">→</span><strong>WebSocket</strong></div><p>매초 데이터를 조회하던 HTTP Polling을 WebSocket 기반 푸시로 전환했습니다. 불필요한 요청을 줄이고, 생산 데이터가 화면에 반영되는 속도를 개선했습니다.</p></div></article>
+            <article class="contribution"><div class="contribution-heading"><span class="topic">설비 데이터 연동</span><h4>다른 설비의 데이터를<br class="desktop-only"> 하나의 흐름으로 연결했습니다.</h4></div><div class="contribution-content"><p>PLC 설비 데이터의 실시간 수집 로직을 구현했습니다. RFID 미들웨어와의 연동 인터페이스를 설계하고 5분 주기 동기화를 구성했습니다.</p><div class="data-flow" aria-label="PLC 데이터는 실시간 수집, RFID 데이터는 5분 주기 동기화"><span>PLC <small>실시간 수집</small></span><span class="flow-destination">MES</span><span>RFID <small>5분 주기 동기화</small></span></div></div></article>
+            <article class="contribution"><div class="contribution-heading"><span class="topic">현장 사용성</span><h4>실제로 사용하는 환경에서<br class="desktop-only"> 답을 찾았습니다.</h4></div><div class="contribution-content"><p>Thymeleaf 기반 현장용 태블릿 UI를 개발하고, 현장 피드백을 반영했습니다. 공정 변수와 사용자 조작 실수에 대한 예외 처리를 보강해 시스템 안정성을 높였습니다.</p></div></article>
           </div>
-        </div>
-        <div class="hero-image">
-          <div class="hero-image-placeholder">
-            <img src="./image/bok.jpeg" alt="복권일 프로필 사진">
-            <span>포폴사진</span>
-          </div>
-        </div>
+          <aside class="research-note"><span class="research-icon" aria-hidden="true">↗</span><div><p class="topic">함께한 R&D</p><h4>AI 기반 골프 캐디 · 장애물 인식</h4><p>YOLOv10 모델 개발에 참여해 Water·Tree·Bench 데이터를 수집하고 라벨링했습니다. COCO와 커스텀 데이터를 통합 학습하며 기존 인식 성능을 유지하는 문제에 대응했습니다.</p></div></aside>
+        </article>
       </div>
     </section>
-    
-    <section id="projects" class="content-section">
-      <h2 class="section-title">프로젝트</h2>
-      <div class="section-content">
-        <div class="projects-grid">
-          <article class="project-card" data-href="project-kbo.html">
-            <div class="project-body">
-              <h3 class="project-title">KBO 리그 통합 데이터 플랫폼</h3>
-              <p class="project-meta">2024.05.03 ~ 2024.05.15</p>
-              <p class="project-desc">KBO 핵심 정보를 통합하고 크롤링 자동화를 구현한 플랫폼</p>
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Django</span>
-                <span class="tag">Spring</span>
-                <span class="tag">Selenium</span>
-              </div>
-              <div class="project-links">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <a href="https://github.com/Lottone27/java-project-KBOcrawling" class="project-link" target="_blank" rel="noopener">GitHub →</a>
-            </div>
-          </div>
-          <div class="project-media">
-            <div class="project-image-placeholder">
-              <img src="./image/kbo_1.webp" alt="KBO 프로젝트 미리보기">
-            </div>
-          </div>
-        </article>
-        
-        <article class="project-card" data-href="project-personal.html">
-          <div class="project-body">
-            <h3 class="project-title">AI 이미지 분석 (마스크 &amp; 퍼스널컬러)</h3>
-            <p class="project-meta">프로젝트 기간</p>
-            <p class="project-desc">마스크 감지·퍼스널 컬러 진단·가상 메이크업을 통합한 AI 뷰티 웹 서비스</p>
-            <div class="project-tags">
-              <span class="tag">Vue.js</span>
-              <span class="tag">Spring Boot</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">OpenCV</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Lottone27/java-project-AI-color" class="project-link" target="_blank" rel="noopener">GitHub →</a>
-            </div>
-          </div>
-          <div class="project-media">
-            <div class="project-image-placeholder">
-              <img src="./image/personal/perosnal.png" alt="AI 이미지 분석 프로젝트 미리보기">
-            </div>
-          </div>
-        </article>
 
-        <!-- <article class="project-card" data-href="project-mentoring.html">
-          <div class="project-body">
-            <h3 class="project-title">멘토링 프로젝트</h3>
-            <p class="project-meta">프로젝트 기간</p>
-            <p class="project-desc">내용 준비중</p>
-            <div class="project-tags"></div>
-            <div class="project-links"></div>
-          </div>
-          <div class="project-media">
-            <div class="project-image-placeholder">
-              <span>이미지 준비중</span>
-            </div>
-          </div>
-        </article> -->
-      </div>
-    </div>
-  </section>
-  
-    <section id="skills" class="content-section">
-      <h2 class="section-title">기술</h2>
-      <div class="section-content">
-        <div class="skills-container">
-        <div class="skill-group">
-          <h4 class="skill-category">Backend</h4>
-          <div class="skill-list">
-            <span class="skill-item" style="--level: 0.88">Spring Boot</span>
-            <span class="skill-item" style="--level: 0.85">REST API</span>
-            <span class="skill-item" style="--level: 0.8">JPA</span>
-            <span class="skill-item" style="--level: 0.75">MyBatis</span>
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="skill-category">Frontend</h4>
-          <div class="skill-list">
-            <span class="skill-item" style="--level: 0.78">JavaScript</span>
-            <span class="skill-item" style="--level: 0.74">Vue.js</span>
-            <span class="skill-item" style="--level: 0.7">Thymeleaf</span>
-            <span class="skill-item" style="--level: 0.76">HTML / CSS</span>
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="skill-category">Database</h4>
-          <div class="skill-list">
-            <span class="skill-item" style="--level: 0.78">MySQL</span>
-            <span class="skill-item" style="--level: 0.7">Oracle</span>
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="skill-category">DevOps</h4>
-          <div class="skill-list">
-            <span class="skill-item" style="--level: 0.68">AWS (EC2, S3)</span>
-            <span class="skill-item" style="--level: 0.64">GitHub Actions</span>
-            <span class="skill-item" style="--level: 0.7">Linux (Ubuntu)</span>
-          </div>
-        </div>
-        
-        <div class="skill-group">
-          <h4 class="skill-category">Tools</h4>
-          <div class="skill-list">
-            <span class="skill-item" style="--level: 0.82">Git / GitHub</span>
-            <span class="skill-item" style="--level: 0.72">Postman</span>
-          </div>
-        </div>
-        </div>
-      </div>
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div class="section-title-group"><p class="overline">PROJECTS</p><h2 id="projects-title">프로젝트</h2></div><p class="section-purpose">직접 구현한 서비스와 그 안에서 맡은 역할을 정리했습니다.</p></div>
+      <article class="project-entry" id="project-kbo">
+        <a class="project-art project-art-kbo" href="project-kbo.html" aria-label="KBO 프로젝트 상세 보기"><img src="image/kbo_1.webp" alt="KBO 플랫폼의 경기 일정, 구단 정보와 메인 화면" width="1470" height="832" loading="lazy"><span class="image-open" aria-hidden="true">↗</span></a>
+        <div class="project-info"><p class="project-kind">데이터 수집 · 백엔드 연동</p><h3><a href="project-kbo.html">KBO 리그 통합 데이터 플랫폼</a></h3><p class="project-description">경기 일정, 뉴스, 구단 정보를 한곳에서 확인하는 야구 정보 서비스입니다.</p><dl class="project-meta"><div><dt>기간</dt><dd>2024.05.03 — 05.15</dd></div><div><dt>담당</dt><dd>데이터 수집 · 서버 연동 · UI 기획</dd></div></dl><ul class="project-points"><li>Django와 Spring MVC 간 데이터 통신</li><li>크롤링부터 Oracle 적재까지 자동화</li><li>경기 일정에 맞춘 Spring 스케줄링</li></ul><ul class="tech-list" aria-label="KBO 프로젝트 사용 기술"><li>Python</li><li>Django</li><li>Spring MVC</li><li>Selenium</li></ul><div class="project-actions"><a class="button button-secondary" href="project-kbo.html">프로젝트 자세히 보기 <span aria-hidden="true">↗</span></a><a class="repository-link" href="https://github.com/Lottone27/java-project-KBOcrawling" target="_blank" rel="noopener noreferrer" aria-label="KBO 프로젝트 GitHub 저장소">GitHub ↗</a></div></div>
+      </article>
+      <article class="project-entry" id="project-personal">
+        <a class="project-art project-art-beauty" href="project-personal.html" aria-label="AI 뷰티 프로젝트 상세 보기"><img src="image/personal/perosnal.png" alt="퍼스널 컬러 진단과 가상 메이크업 서비스 화면" width="2640" height="1478" loading="lazy"><span class="image-open" aria-hidden="true">↗</span></a>
+        <div class="project-info"><p class="project-kind">풀스택 개발 · AI 모델 연동</p><h3><a href="project-personal.html">AI 이미지 분석 · 뷰티 서비스</a></h3><p class="project-description">마스크 감지, 퍼스널 컬러 진단, 가상 메이크업을 연결한 AI 웹 서비스입니다.</p><dl class="project-meta"><div><dt>기간</dt><dd>2024.06.28 — 07.18</dd></div><div><dt>담당</dt><dd>UI 총괄 · 풀스택 개발 · 모델 연동</dd></div></dl><ul class="project-points"><li>Vue.js 기반 UI 총괄 및 디자인 기준 정립</li><li>Q&A·마이페이지의 프론트엔드와 API 구현</li><li>Django에 BeautyGAN 배치 및 서비스 연동</li></ul><ul class="tech-list" aria-label="AI 프로젝트 사용 기술"><li>Vue.js</li><li>Spring Boot</li><li>Django</li><li>BeautyGAN</li></ul><div class="project-actions"><a class="button button-secondary" href="project-personal.html">프로젝트 자세히 보기 <span aria-hidden="true">↗</span></a><a class="repository-link" href="https://github.com/Lottone27/java-project-AI-color" target="_blank" rel="noopener noreferrer" aria-label="AI 프로젝트 GitHub 저장소">GitHub ↗</a></div></div>
+      </article>
     </section>
-    
-    
 
+    <section class="section background-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div class="section-title-group"><p class="overline">SKILLS & LEARNING</p><h2 id="skills-title">기술과 교육</h2></div><p class="section-purpose">개발에 사용하는 기술과 학습 이력을 소개합니다.</p></div><div class="background-layout"><div class="skill-panel"><h3 class="subsection-title">사용 기술</h3><div class="skill-groups"><div class="skill-group"><h3>Backend</h3><p>Java · Spring Boot · REST API<br>MyBatis · JPA</p></div><div class="skill-group"><h3>Frontend</h3><p>JavaScript · Vue.js · Thymeleaf<br>HTML · CSS</p></div><div class="skill-group"><h3>Database</h3><p>MySQL · Oracle</p></div><div class="skill-group"><h3>Infra & Tools</h3><p>AWS EC2 / S3 · Linux · GitHub Actions<br>Git · GitHub · Postman</p></div></div></div><div class="learning"><h3 class="subsection-title">교육과 자격</h3><article class="education"><p class="small-text">2024.02 — 2024.08</p><h4>Java & Python 기반<br>풀스택 웹서비스 개발자 양성과정</h4><p>REST API 개발, 데이터베이스 설계·연동,<br>Vue.js 기반 프론트엔드 구현</p></article><dl class="certificates"><div><dt>리눅스마스터 2급</dt><dd>2025.12</dd></div><div><dt>SQLD</dt><dd>2026.03</dd></div></dl></div></div></div></section>
 
-
-  <section id="experience" class="content-section">
-    <h2 class="section-title">경력</h2>
-    <div class="section-content">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <h3 class="company-name">(주)비지언스</h3>
-            <span class="period">2025.01 ~ 재직중</span>
-          </div>
-          <p class="position">백엔드 개발자</p>
-          <p class="description description-title">주요 업무: 스마트팩토리 MES 시스템 구축 및 고도화 (2025.01 ~ 재직 중)</p>
-          <p class="description description-title">주요 성과 및 업무</p>
-          <ul class="detail-list">
-            <li>Spring Boot, MyBatis 기반의 생산 관리 시스템(MES) 백엔드 설계 및 구현</li>
-            <li>IoT 기기(PLC) 및 RFID 미들웨어를 통한 실시간 생산 데이터 수집 파이프라인 구축</li>
-            <li>시스템 부하 감소 및 사용자 경험(UX) 개선을 위한 기술적 최적화 수행</li>
-          </ul>
-          <p class="description description-title">기술적 문제 해결 및 기여</p>
-          <ul class="detail-list">
-            <li>[성능 최적화] 기존의 매초 단위 HTTP Polling 방식의 데이터 조회를 WebSocket 기반 실시간 푸시 방식으로 전환하여 서버 트래픽 약 80% 이상 절감 및 데이터 반영 속도 개선</li>
-            <li>[데이터 연동] RFID 미들웨어와의 연동 인터페이스 설계(5분 주기 데이터 동기화) 및 PLC 설비 데이터 실시간 수집 로직 구현</li>
-            <li>[현장 밀착 대응] 현장 공정 변수 및 사용자 조작 실수(되돌리기 등)에 대한 예외 처리 로직을 강화하여 시스템 안정성 확보</li>
-            <li>[UI/UX] Thymeleaf를 활용한 현장용 태블릿 UI 개발 및 현장 피드백을 즉각 반영하는 애자일한 수정 프로세스 주도</li>
-          </ul>
-          <p class="description description-title">서브 프로젝트: AI 기반 골프 캐디 R&amp;D 과제</p>
-          <p class="description description-title">주요 성과 및 업무</p>
-          <ul class="detail-list">
-            <li>YOLOv10 기반 실시간 장애물 인식 모델 개발 참여</li>
-          </ul>
-          <p class="description description-title">기술적 문제 해결 및 기여</p>
-          <ul class="detail-list">
-            <li>[모델 고도화] 골프장 환경에 특화된 3개 클래스(Water, Tree, Bench) 데이터를 직접 수집 및 Bounding Box 라벨링 수행</li>
-            <li>[기술적 이슈 해결] 추가 학습 시 기존 학습 데이터 정보가 손실되는 Backbone/Forgetting 현상을 해결하기 위해 COCO 데이터셋 전체와 커스텀 데이터를 통합 학습시켜 모델의 범용 성능 유지 및 정확도 향상</li>
-          </ul>
-          
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-header">
-            <h3 class="company-name">Java & Python 기반 풀스택 웹서비스 개발자 양성과정</h3>
-            <span class="period">2024.02 ~ 2024.08</span>
-          </div>
-          <p class="position">Full Stack Developer</p>
-          <p class="description">RESTful API 기반 백엔드 개발</p>
-          <p class="description">Oracle·MySQL 데이터베이스 설계 및 연동</p>
-          <p class="description">Vue.js 기반 프론트엔드 구현</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="certification" class="content-section">
-    <h2 class="section-title">자격증</h2>
-    <div class="section-content">
-      <div class="cert-section">
-        <h4 class="cert-title">자격증</h4>
-        <div class="cert-item">
-          <span>리눅스마스터 2급</span>
-          <span class="cert-date">2025.12</span>
-        </div>
-        <div class="cert-item">
-          <span>SQLD</span>
-          <span class="cert-date">2026.03</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="contact" class="content-section">
-    <h2 class="section-title">연락처</h2>
-    <div class="section-content">
-      <div class="contact-grid">
-        <button type="button" class="contact-card contact-copy" data-copy="lottone27@naver.com" aria-label="이메일 주소 복사">
-          <div class="contact-icon-wrapper">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="5" width="18" height="14" rx="2" stroke="#6B9EFF" stroke-width="2" fill="none"/>
-              <path d="M3 7L12 13L21 7" stroke="#6B9EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="contact-title">Email</h3>
-          <p class="contact-info">lottone27@naver.com</p>
-        </button>
-        
-        <a href="https://github.com/Lottone27" target="_blank" rel="noreferrer noopener" class="contact-card">
-          <div class="contact-icon-wrapper">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.865 20.17 8.839 21.49C9.339 21.58 9.521 21.27 9.521 21C9.521 20.77 9.511 19.98 9.511 19.15C7 19.61 6.35 18.53 6.15 17.97C6.037 17.68 5.55 16.8 5.125 16.57C4.775 16.4 4.275 15.94 5.115 15.93C5.9 15.92 6.462 16.64 6.65 16.95C7.55 18.43 8.988 18.01 9.562 17.73C9.65 17.08 9.912 16.65 10.2 16.38C7.975 16.11 5.65 15.24 5.65 11.47C5.65 10.46 6.037 9.62 6.675 8.97C6.575 8.7 6.225 7.66 6.775 6.32C6.775 6.32 7.612 6.05 9.525 7.37C10.325 7.13 11.175 7.01 12.025 7.01C12.875 7.01 13.725 7.13 14.525 7.37C16.437 6.04 17.275 6.32 17.275 6.32C17.825 7.66 17.475 8.7 17.375 8.97C18.012 9.62 18.4 10.45 18.4 11.47C18.4 15.25 16.063 16.11 13.838 16.38C14.2 16.7 14.513 17.31 14.513 18.26C14.513 19.6 14.5 20.68 14.5 21C14.5 21.27 14.688 21.59 15.188 21.49C19.138 20.16 22 16.41 22 12C22 6.477 17.523 2 12 2Z" fill="#6B9EFF"/>
-            </svg>
-          </div>
-          <h3 class="contact-title">GitHub</h3>
-          <p class="contact-info">github.com/Lottone27</p>
-        </a>
-        
-        <a href="https://lottone.tistory.com" target="_blank" rel="noreferrer noopener" class="contact-card">
-          <div class="contact-icon-wrapper">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="6" cy="6" r="3.5" fill="#FF7600"/>
-              <circle cx="18" cy="6" r="3.5" fill="#FF7600"/>
-              <circle cx="6" cy="18" r="3.5" fill="#FF7600"/>
-              <circle cx="18" cy="18" r="3.5" fill="#FF7600"/>
-            </svg>
-          </div>
-          <h3 class="contact-title">Blog</h3>
-          <p class="contact-info">lottone.tistory.com</p>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  
-</main>
-</div>
-</div>
-</div>
-
-<script>
-    // 사이드바 네비게이션 활성 상태 관리
-    document.addEventListener('DOMContentLoaded', () => {
-      const navLinks = document.querySelectorAll('.sidebar nav a');
-      const sections = document.querySelectorAll('section');
-      const scrollContainer = document.querySelector('.main-content');
-
-      if (!scrollContainer) return;
-
-      // 스크롤 시 활성 섹션 감지
-      function updateActiveNav() {
-        const scrollPosition = scrollContainer.scrollTop + scrollContainer.clientHeight / 3;
-        let current = '';
-
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          const sectionId = section.getAttribute('id');
-
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            current = sectionId;
-          }
-        });
-
-        // 첫 번째 섹션
-        if (sections.length > 0 && scrollContainer.scrollTop < sections[0].offsetTop + 150) {
-          current = sections[0].getAttribute('id');
-        }
-
-        // 마지막 섹션
-        if (sections.length > 0) {
-          const lastSection = sections[sections.length - 1];
-          const lastSectionTop = lastSection.offsetTop;
-          const lastSectionHeight = lastSection.clientHeight;
-          if (scrollContainer.scrollTop + scrollContainer.clientHeight >= lastSectionTop + lastSectionHeight - 150) {
-            current = lastSection.getAttribute('id');
-          }
-        }
-
-        // 활성 상태 업데이트
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          const href = link.getAttribute('href');
-          if (href === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-
-      // 클릭 시 부드러운 스크롤
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          const targetSection = document.getElementById(targetId);
-
-          if (targetSection) {
-            // 활성 상태 즉시 업데이트
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            // 부드러운 스크롤 (.main-content 컨테이너 기준)
-            const offsetTop = targetSection.offsetTop - 40;
-            scrollContainer.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // 스크롤 이벤트 (throttle 적용)
-      let ticking = false;
-      function onScroll() {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updateActiveNav();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-
-      scrollContainer.addEventListener('scroll', onScroll, { passive: true });
-      updateActiveNav(); // 초기 실행
-    });
-
-    // 프로젝트 카드 전체 클릭 이동
-    document.querySelectorAll('.project-card[data-href]').forEach((card) => {
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a')) return;
-        const href = card.getAttribute('data-href');
-        if (href) {
-          window.location.href = href;
-        }
-      });
-    });
-
-    // 이메일 복사 버튼
-    document.querySelectorAll('.contact-copy[data-copy]').forEach((card) => {
-      const info = card.querySelector('.contact-info, .copy-text');
-      if (info && !card.dataset.originalText) {
-        card.dataset.originalText = info.textContent || '';
-      }
-
-      function swapText(nextText) {
-        if (!info) return;
-        info.classList.add('is-fading');
-        window.setTimeout(() => {
-          info.textContent = nextText;
-          info.classList.remove('is-fading');
-        }, 180);
-      }
-
-      function showCopied() {
-        if (!info) return;
-        swapText('복사됨');
-        window.setTimeout(() => {
-          swapText(card.dataset.originalText || '');
-        }, 1200);
-      }
-
-      function copyText(text) {
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(text).then(showCopied).catch(() => {});
-          return;
-        }
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.setAttribute('readonly', '');
-        textarea.style.position = 'absolute';
-        textarea.style.left = '-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        showCopied();
-      }
-
-      card.addEventListener('click', () => {
-        const text = card.dataset.copy || '';
-        if (text) copyText(text);
-      });
-
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          const text = card.dataset.copy || '';
-          if (text) copyText(text);
-        }
-      });
-    });
-  </script>
+    <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading"><div class="section-title-group"><p class="overline">CONTACT</p><h2 id="contact-title">연락처</h2></div><p class="section-purpose">업무와 프로젝트에 대한 연락을 기다립니다.</p></div>
+      <div class="contact-body"><a class="contact-email" href="mailto:lottone27@naver.com">lottone27@naver.com <span aria-hidden="true">↗</span></a><div class="contact-links"><button class="copy-button" type="button" data-copy="lottone27@naver.com">이메일 주소 복사</button><a href="https://github.com/Lottone27" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://lottone.tistory.com" target="_blank" rel="noopener noreferrer">Blog ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer container"><p>© 복권일</p><p>Backend Developer · Portfolio</p></footer>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
 </body>
 </html>

@@ -1,414 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome - Lottone Portfolio</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <style>
-    /* 입장 페이지 전용 스타일 */
-    .entry-page {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #111725 0%, #182132 50%, #1d283b 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      overflow: hidden;
-    }
-
-    .entry-content {
-      width: 90%;
-      max-width: 700px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1.2s ease-out forwards;
-    }
-
-    .terminal {
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      overflow: hidden;
-      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
-    }
-
-    .terminal-header {
-      background: #161b22;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 1px solid #30363d;
-    }
-
-    .terminal-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .terminal-dot.red { background: #ff5f56; }
-    .terminal-dot.yellow { background: #ffbd2e; }
-    .terminal-dot.green { background: #27c93f; }
-
-    .terminal-body {
-      padding: 20px;
-      padding-bottom: 70px;
-      min-height: 200px;
-      color: #c9d1d9;
-      font-size: 14px;
-      line-height: 1.6;
-      position: relative;
-    }
-
-    .terminal-line {
-      margin-bottom: 8px;
-      opacity: 0;
-      animation: fadeIn 0.3s ease-out forwards;
-    }
-
-    .terminal-prompt {
-      color: #7cc4ff;
-      margin-right: 8px;
-    }
-
-    .terminal-command {
-      color: #c9d1d9;
-    }
-
-    .terminal-output {
-      color: #8b949e;
-      margin-left: 20px;
-    }
-
-    .terminal-output.success {
-      color: #3fb950;
-    }
-
-    .terminal-output.error {
-      color: #f85149;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 16px;
-      background: var(--accent);
-      margin-left: 2px;
-      animation: blink 1s infinite;
-      vertical-align: middle;
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-
-    .compile-button {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      padding: 12px 28px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
-      color: #ffffff;
-      background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
-      border: 1px solid #3fb950;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 0.5s ease-out 2s forwards;
-      box-shadow: 0 4px 12px rgba(46, 160, 67, 0.3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      overflow: hidden;
-      z-index: 10;
-    }
-
-    .compile-button::before {
-      content: '▶';
-      font-size: 12px;
-      margin-right: 4px;
-    }
-
-    .compile-button:hover {
-      background: linear-gradient(135deg, #2ea043 0%, #3fb950 100%);
-      border-color: #4ecf5f;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(46, 160, 67, 0.4);
-    }
-
-    .compile-button:active {
-      transform: translateY(0);
-      box-shadow: 0 2px 8px rgba(46, 160, 67, 0.3);
-    }
-
-    .compile-button:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-      transform: none;
-      background: #1a5f28;
-      border-color: #1a5f28;
-      box-shadow: none;
-    }
-
-    .compile-button:disabled::before {
-      content: '⏸';
-    }
-
-    .typing {
-      border-right: 2px solid var(--accent);
-      animation: blink 1s infinite;
-    }
-
-    .particles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 50%;
-      opacity: 0;
-      animation: float 8s infinite ease-in-out;
-      bottom: -20px;
-      box-shadow: 0 0 6px rgba(124, 196, 255, 0.6);
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 20px rgba(124, 196, 255, 0.5);
-      }
-      to {
-        text-shadow: 0 0 30px rgba(124, 196, 255, 0.8), 0 0 40px rgba(124, 196, 255, 0.4);
-      }
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-      }
-      3% {
-        opacity: 0.8;
-      }
-      97% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-120vh) translateX(50px);
-        opacity: 0;
-      }
-    }
-
-    .entry-page.fade-out {
-      animation: fadeOut 0.8s ease-out forwards;
-    }
-
-    @keyframes fadeOut {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .terminal-body {
-        padding: 16px;
-        padding-bottom: 65px;
-        font-size: 12px;
-      }
-      .compile-button {
-        padding: 10px 20px;
-        font-size: 12px;
-        bottom: 12px;
-        right: 12px;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="현장의 데이터를 서비스로 연결하는 백엔드 개발자 복권일. MES, 실시간 통신, 시스템 연동 경험과 프로젝트를 소개합니다.">
+  <meta name="theme-color" content="#f7f8fb">
+  <title>복권일 — 백엔드 개발자</title>
+  <link rel="stylesheet" href="css/renewal.css">
+  <script src="js/renewal.js" defer></script>
 </head>
 <body>
-  <div class="entry-page" id="entryPage">
-    <div class="particles" id="particles"></div>
-    <div class="entry-content">
-      <div class="terminal" id="terminal">
-        <div class="terminal-header">
-          <div class="terminal-dot red"></div>
-          <div class="terminal-dot yellow"></div>
-          <div class="terminal-dot green"></div>
-          <span style="margin-left: 12px; color: #8b949e; font-size: 12px;">PortFolio.go</span>
-        </div>
-        <div class="terminal-body" id="terminalBody">
-          <div class="terminal-line" id="line1">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-command" id="command"></span>
-            <span class="cursor" id="cursor"></span>
-          </div>
-          <button class="compile-button" id="compileButton" disabled>실행하기</button>
-        </div>
-      </div>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="identity" href="index.html" aria-label="복권일 포트폴리오 홈"><span class="identity-symbol" aria-hidden="true">k.</span><span>복권일<span class="identity-caption">PORTFOLIO</span></span></a>
+      <nav class="main-nav" aria-label="주요 메뉴"><a href="#experience">실무 경험</a><a href="#projects">프로젝트</a><a href="#skills">기술과 교육</a><a href="#contact" class="nav-contact">연락하기 <span aria-hidden="true">↗</span></a></nav>
     </div>
-  </div>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="intro-title">
+      <div class="hero-copy">
+        <p class="overline">JAVA · SPRING · BACKEND</p>
+        <h1 id="intro-title">백엔드 개발자<br><span>복권일</span>입니다.</h1>
+        <p class="hero-description">현장의 데이터를 서비스로 연결합니다.<br>안정적인 데이터 흐름을 설계하고,<br class="mobile-only"> 실제 사용자의 불편을 해결합니다.</p>
+        <div class="hero-actions"><a class="button button-primary" href="mailto:lottone27@naver.com">이메일로 연락하기 <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/Lottone27" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a class="text-link" href="https://lottone.tistory.com" target="_blank" rel="noopener noreferrer">Blog <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="hero-aside"><figure class="portrait"><img src="image/bok.jpeg" alt="바다 앞에 서 있는 복권일" width="280" height="320" fetchpriority="high"><figcaption><span class="status-dot" aria-hidden="true"></span> 현장과 사용자를 이해하는 개발자</figcaption></figure></div>
+      <div class="intro-context"><p><span class="context-label">현재</span><strong>3H솔루션 · 백엔드 개발</strong><span class="context-date">2026.05 — 재직 중</span></p><p><span class="context-label">주요 경험</span><strong>SK하이닉스 MES 개발</strong></p></div>
+    </section>
 
-  <script>
-    // 파티클 생성
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 60;
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading"><div class="section-title-group"><p class="overline">EXPERIENCE</p><h2 id="experience-title">실무 경험</h2></div><p class="section-purpose">회사에서 맡은 업무와 기술적으로 해결한 문제를 소개합니다.</p></div>
+        <article class="career" aria-label="현재 경력: 3H솔루션">
+          <p class="record-label">현재 경력</p>
+          <header class="career-header"><div><h3>3H솔루션</h3><p>백엔드 개발자 <span class="separator" aria-hidden="true">·</span> 2026.05 — 재직 중</p></div><span class="career-domain">SK하이닉스 · MES</span></header>
+          <div class="career-intro"><h4>SK하이닉스 MES 개발</h4><p>SK하이닉스 MES 개발 업무를 담당하고 있습니다.</p></div>
+        </article>
+        <article class="career">
+          <p class="record-label">이전 경력</p>
+          <header class="career-header"><div><h3>비지언스</h3><p>백엔드 개발자 <span class="separator" aria-hidden="true">·</span> 2025.01 입사</p></div><span class="career-domain">스마트팩토리 · MES</span></header>
+          <div class="career-intro"><h4>생산 현장과 웹 서비스를 연결하는 백엔드</h4><p>Spring Boot와 MyBatis를 기반으로 생산 관리 시스템을 구축하고 고도화했습니다. PLC·RFID 데이터 연동부터 실시간 모니터링, 현장용 태블릿 화면까지 개발했습니다.</p><ul class="tech-list" aria-label="실무 사용 기술"><li>Java</li><li>Spring Boot</li><li>MyBatis</li><li>WebSocket</li><li>Thymeleaf</li></ul></div>
+          <div class="contributions">
+            <article class="contribution"><div class="contribution-heading"><span class="topic">실시간 통신</span><h4>반복 조회를 줄이고,<br class="desktop-only"> 필요한 순간에 데이터를 전달했습니다.</h4></div><div class="contribution-content"><div class="technical-transition" aria-label="HTTP Polling에서 WebSocket으로 전환"><span>HTTP Polling</span><span class="transition-arrow" aria-hidden="true">→</span><strong>WebSocket</strong></div><p>매초 데이터를 조회하던 HTTP Polling을 WebSocket 기반 푸시로 전환했습니다. 불필요한 요청을 줄이고, 생산 데이터가 화면에 반영되는 속도를 개선했습니다.</p></div></article>
+            <article class="contribution"><div class="contribution-heading"><span class="topic">설비 데이터 연동</span><h4>다른 설비의 데이터를<br class="desktop-only"> 하나의 흐름으로 연결했습니다.</h4></div><div class="contribution-content"><p>PLC 설비 데이터의 실시간 수집 로직을 구현했습니다. RFID 미들웨어와의 연동 인터페이스를 설계하고 5분 주기 동기화를 구성했습니다.</p><div class="data-flow" aria-label="PLC 데이터는 실시간 수집, RFID 데이터는 5분 주기 동기화"><span>PLC <small>실시간 수집</small></span><span class="flow-destination">MES</span><span>RFID <small>5분 주기 동기화</small></span></div></div></article>
+            <article class="contribution"><div class="contribution-heading"><span class="topic">현장 사용성</span><h4>실제로 사용하는 환경에서<br class="desktop-only"> 답을 찾았습니다.</h4></div><div class="contribution-content"><p>Thymeleaf 기반 현장용 태블릿 UI를 개발하고, 현장 피드백을 반영했습니다. 공정 변수와 사용자 조작 실수에 대한 예외 처리를 보강해 시스템 안정성을 높였습니다.</p></div></article>
+          </div>
+          <aside class="research-note"><span class="research-icon" aria-hidden="true">↗</span><div><p class="topic">함께한 R&D</p><h4>AI 기반 골프 캐디 · 장애물 인식</h4><p>YOLOv10 모델 개발에 참여해 Water·Tree·Bench 데이터를 수집하고 라벨링했습니다. COCO와 커스텀 데이터를 통합 학습하며 기존 인식 성능을 유지하는 문제에 대응했습니다.</p></div></aside>
+        </article>
+      </div>
+    </section>
 
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 3 + 's';
-        particle.style.animationDuration = (4 + Math.random() * 4) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><div class="section-title-group"><p class="overline">PROJECTS</p><h2 id="projects-title">프로젝트</h2></div><p class="section-purpose">직접 구현한 서비스와 그 안에서 맡은 역할을 정리했습니다.</p></div>
+      <article class="project-entry" id="project-kbo">
+        <a class="project-art project-art-kbo" href="project-kbo.html" aria-label="KBO 프로젝트 상세 보기"><img src="image/kbo_1.webp" alt="KBO 플랫폼의 경기 일정, 구단 정보와 메인 화면" width="1470" height="832" loading="lazy"><span class="image-open" aria-hidden="true">↗</span></a>
+        <div class="project-info"><p class="project-kind">데이터 수집 · 백엔드 연동</p><h3><a href="project-kbo.html">KBO 리그 통합 데이터 플랫폼</a></h3><p class="project-description">경기 일정, 뉴스, 구단 정보를 한곳에서 확인하는 야구 정보 서비스입니다.</p><dl class="project-meta"><div><dt>기간</dt><dd>2024.05.03 — 05.15</dd></div><div><dt>담당</dt><dd>데이터 수집 · 서버 연동 · UI 기획</dd></div></dl><ul class="project-points"><li>Django와 Spring MVC 간 데이터 통신</li><li>크롤링부터 Oracle 적재까지 자동화</li><li>경기 일정에 맞춘 Spring 스케줄링</li></ul><ul class="tech-list" aria-label="KBO 프로젝트 사용 기술"><li>Python</li><li>Django</li><li>Spring MVC</li><li>Selenium</li></ul><div class="project-actions"><a class="button button-secondary" href="project-kbo.html">프로젝트 자세히 보기 <span aria-hidden="true">↗</span></a><a class="repository-link" href="https://github.com/Lottone27/java-project-KBOcrawling" target="_blank" rel="noopener noreferrer" aria-label="KBO 프로젝트 GitHub 저장소">GitHub ↗</a></div></div>
+      </article>
+      <article class="project-entry" id="project-personal">
+        <a class="project-art project-art-beauty" href="project-personal.html" aria-label="AI 뷰티 프로젝트 상세 보기"><img src="image/personal/perosnal.png" alt="퍼스널 컬러 진단과 가상 메이크업 서비스 화면" width="2640" height="1478" loading="lazy"><span class="image-open" aria-hidden="true">↗</span></a>
+        <div class="project-info"><p class="project-kind">풀스택 개발 · AI 모델 연동</p><h3><a href="project-personal.html">AI 이미지 분석 · 뷰티 서비스</a></h3><p class="project-description">마스크 감지, 퍼스널 컬러 진단, 가상 메이크업을 연결한 AI 웹 서비스입니다.</p><dl class="project-meta"><div><dt>기간</dt><dd>2024.06.28 — 07.18</dd></div><div><dt>담당</dt><dd>UI 총괄 · 풀스택 개발 · 모델 연동</dd></div></dl><ul class="project-points"><li>Vue.js 기반 UI 총괄 및 디자인 기준 정립</li><li>Q&A·마이페이지의 프론트엔드와 API 구현</li><li>Django에 BeautyGAN 배치 및 서비스 연동</li></ul><ul class="tech-list" aria-label="AI 프로젝트 사용 기술"><li>Vue.js</li><li>Spring Boot</li><li>Django</li><li>BeautyGAN</li></ul><div class="project-actions"><a class="button button-secondary" href="project-personal.html">프로젝트 자세히 보기 <span aria-hidden="true">↗</span></a><a class="repository-link" href="https://github.com/Lottone27/java-project-AI-color" target="_blank" rel="noopener noreferrer" aria-label="AI 프로젝트 GitHub 저장소">GitHub ↗</a></div></div>
+      </article>
+    </section>
 
-    // 코드 타이핑 애니메이션
-    function typeText(element, text, speed = 50, callback) {
-      let i = 0;
-      element.textContent = '';
-      
-      function type() {
-        if (i < text.length) {
-          element.textContent += text.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        } else {
-          if (callback) callback();
-        }
-      }
-      type();
-    }
+    <section class="section background-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div class="section-title-group"><p class="overline">SKILLS & LEARNING</p><h2 id="skills-title">기술과 교육</h2></div><p class="section-purpose">개발에 사용하는 기술과 학습 이력을 소개합니다.</p></div><div class="background-layout"><div class="skill-panel"><h3 class="subsection-title">사용 기술</h3><div class="skill-groups"><div class="skill-group"><h3>Backend</h3><p>Java · Spring Boot · REST API<br>MyBatis · JPA</p></div><div class="skill-group"><h3>Frontend</h3><p>JavaScript · Vue.js · Thymeleaf<br>HTML · CSS</p></div><div class="skill-group"><h3>Database</h3><p>MySQL · Oracle</p></div><div class="skill-group"><h3>Infra & Tools</h3><p>AWS EC2 / S3 · Linux · GitHub Actions<br>Git · GitHub · Postman</p></div></div></div><div class="learning"><h3 class="subsection-title">교육과 자격</h3><article class="education"><p class="small-text">2024.02 — 2024.08</p><h4>Java & Python 기반<br>풀스택 웹서비스 개발자 양성과정</h4><p>REST API 개발, 데이터베이스 설계·연동,<br>Vue.js 기반 프론트엔드 구현</p></article><dl class="certificates"><div><dt>리눅스마스터 2급</dt><dd>2025.12</dd></div><div><dt>SQLD</dt><dd>2026.03</dd></div></dl></div></div></div></section>
 
-    // 터미널에 새 라인 추가
-    function addTerminalLine(text, className = '', delay = 0) {
-      setTimeout(() => {
-        const terminalBody = document.getElementById('terminalBody');
-        const line = document.createElement('div');
-        line.className = 'terminal-line';
-        if (className) {
-          line.innerHTML = `<span class="${className}">${text}</span>`;
-        } else {
-          line.textContent = text;
-        }
-        terminalBody.appendChild(line);
-      }, delay);
-    }
-
-    // 컴파일 프로세스
-    function startCompile() {
-      const compileButton = document.getElementById('compileButton');
-      const terminalBody = document.getElementById('terminalBody');
-      const cursor = document.getElementById('cursor');
-      
-      compileButton.disabled = true;
-      cursor.style.display = 'none';
-      
-      // 기존 라인들 제거
-      terminalBody.innerHTML = '';
-      
-      // 컴파일 시작
-      addTerminalLine('$ go 복권일 PortFolio.go', '', 0);
-      
-      setTimeout(() => {
-        addTerminalLine('', '', 50);
-        addTerminalLine('Building...', 'terminal-output', 100);
-        
-        setTimeout(() => {
-          addTerminalLine('✓ Compiling source files', 'terminal-output', 150);
-          
-          setTimeout(() => {
-            addTerminalLine('✓ Linking dependencies', 'terminal-output', 250);
-            
-            setTimeout(() => {
-              addTerminalLine('✓ Optimizing binary', 'terminal-output', 350);
-              
-              setTimeout(() => {
-                addTerminalLine('', '', 100);
-                addTerminalLine('Build successful!', 'terminal-output success', 150);
-                addTerminalLine('Portfolio ready to launch.', 'terminal-output success', 250);
-                
-                setTimeout(() => {
-                  navigateToPortfolio();
-                }, 500);
-              }, 250);
-            }, 250);
-          }, 250);
-        }, 250);
-      }, 250);
-    }
-
-    // 포트폴리오 페이지로 이동
-    function navigateToPortfolio() {
-      const entryPage = document.getElementById('entryPage');
-      entryPage.classList.add('fade-out');
-      
-      setTimeout(() => {
-        window.location.href = './portfolio.html';
-      }, 800);
-    }
-
-    // 초기화
-    document.addEventListener('DOMContentLoaded', () => {
-      createParticles();
-      
-      const commandElement = document.getElementById('command');
-      const compileButton = document.getElementById('compileButton');
-      
-      // 코드 타이핑 시작
-      setTimeout(() => {
-        typeText(commandElement, 'go 복권일 PortFolio.go', 80, () => {
-          // 타이핑 완료 후 버튼 활성화
-          setTimeout(() => {
-            compileButton.disabled = false;
-          }, 300);
-        });
-      }, 500);
-      
-      // 컴파일 버튼 클릭 이벤트
-      compileButton.addEventListener('click', startCompile);
-    });
-  </script>
+    <section class="contact-section container" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading"><div class="section-title-group"><p class="overline">CONTACT</p><h2 id="contact-title">연락처</h2></div><p class="section-purpose">업무와 프로젝트에 대한 연락을 기다립니다.</p></div>
+      <div class="contact-body"><a class="contact-email" href="mailto:lottone27@naver.com">lottone27@naver.com <span aria-hidden="true">↗</span></a><div class="contact-links"><button class="copy-button" type="button" data-copy="lottone27@naver.com">이메일 주소 복사</button><a href="https://github.com/Lottone27" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://lottone.tistory.com" target="_blank" rel="noopener noreferrer">Blog ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer container"><p>© 복권일</p><p>Backend Developer · Portfolio</p></footer>
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
 </body>
 </html>

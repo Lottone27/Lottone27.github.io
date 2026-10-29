@@ -1,85 +1,18 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KBO 프로젝트 상세</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/portfolio.css">
-</head>
-<body>
-  <div class="terminal-container">
-    <div class="terminal-header">
-      <div class="terminal-dots">
-        <div class="terminal-dot red"></div>
-        <div class="terminal-dot yellow"></div>
-        <div class="terminal-dot green"></div>
-      </div>
-      <div class="terminal-title">Portfolio</div>
-    </div>
-
-    <div class="terminal-content">
-      <aside class="sidebar">
-        <nav>
-          <a href="portfolio.html#projects" class="active sidebar-back">
-            <span class="nav-icon"><</span>
-            <span class="nav-text">back</span>
-          </a>
-          <hr class="sidebar-divider">
-          <div class="sidebar-section-title">sections</div>
-          <a href="#project-detail">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 소개</span>
-          </a>
-          <a href="#overview">
-            <span class="nav-icon">></span>
-            <span class="nav-text">개요</span>
-          </a>
-          <a href="#architecture">
-            <span class="nav-icon">></span>
-            <span class="nav-text">아키텍처</span>
-          </a>
-          <a href="#contributions">
-            <span class="nav-icon">></span>
-            <span class="nav-text">역할 및 기여</span>
-          </a>
-          <a href="#retrospective">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 후기</span>
-          </a>
-          <a href="#demo">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 시연 영상</span>
-          </a>
-        </nav>
-      </aside>
-
-      <div class="main-content">
-        <main class="shell">
-          <section id="project-detail" class="hero-section project-hero">
-            <div class="hero-content">
-              <div class="hero-text">
-                <p class="hero-kicker">Project</p>
-                <div class="hero-title-row">
-                  <h1 class="hero-name">KBO 리그 통합 데이터 플랫폼</h1>
-                  <span class="hero-period">2024.05.03 ~ 2024.05.15</span>
-                </div>
-                <div class="ppt-slider" data-total="44" tabindex="0" aria-label="KBO 프로젝트 주요 화면 슬라이드">
-                  <div class="ppt-viewport">
-                    <div class="ppt-track"></div>
-                  </div>
-                  <div class="ppt-controls">
-                    <button type="button" class="ppt-btn ppt-prev" aria-label="이전 슬라이드">Prev</button>
-                    <div class="ppt-dots" aria-hidden="false"></div>
-                    <div class="ppt-counter" aria-live="polite"></div>
-                    <button type="button" class="ppt-btn ppt-next" aria-label="다음 슬라이드">Next</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="overview" class="content-section detail-section">
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="흩어진 경기 일정, 뉴스, 구단 정보를 하나로 모은 야구 정보 플랫폼입니다. Django와 Spring MVC를 연결하고 데이터 수집을 자동화했습니다."><meta name="theme-color" content="#ffffff">
+<title>KBO 리그 통합 데이터 플랫폼 — 복권일 포트폴리오</title>
+<link rel="stylesheet" href="css/renewal.css"><link rel="stylesheet" href="css/case-study.css">
+<script src="js/case-study.js" defer></script>
+</head><body>
+<a class="skip-link" href="#main">본문으로 바로가기</a>
+<header class="site-header"><div class="container header-content"><a class="identity" href="index.html"><span class="identity-symbol" aria-hidden="true">k.</span><span>복권일<span class="identity-caption">PORTFOLIO</span></span></a><a class="case-back" href="index.html#projects" data-return>← 프로젝트 목록</a></div></header>
+<main id="main" class="container case-main">
+<div class="case-intro"><p class="overline">데이터 수집 · 백엔드 연동</p><h1>KBO 리그 통합 데이터 플랫폼</h1><p class="case-summary">흩어진 경기 일정, 뉴스, 구단 정보를 하나로 모은 야구 정보 플랫폼입니다. Django와 Spring MVC를 연결하고 데이터 수집을 자동화했습니다.</p><dl class="case-facts"><div><dt>프로젝트 기간</dt><dd>2024.05.03 — 2024.05.15</dd></div><div><dt>담당 역할</dt><dd>데이터 수집 · 서버 연동 · UI 기획</dd></div></dl><a class="text-link case-repo" href="https://github.com/Lottone27/java-project-KBOcrawling" target="_blank" rel="noopener noreferrer">GitHub 저장소 보기 ↗</a></div>
+<figure class="case-cover"><img src="image/kbo_1.webp" alt="KBO 리그 통합 데이터 플랫폼 대표 화면" fetchpriority="high" width="1470" height="830"></figure>
+<nav class="case-toc" aria-label="프로젝트 내용"><a href="#overview">개요</a><a href="#contributions">역할과 기여</a><a href="#architecture">아키텍처</a><a href="#retrospective">회고</a><a href="#demo">시연</a><a href="#presentation">발표자료</a></nav>
+<section id="overview" class="case-section">
             <h2 class="section-title">개요</h2>
             <div class="section-content">
               <p class="detail-paragraph">KBO 경기·뉴스·구단 정보를 한곳에서 빠르게 확인하는 통합형 야구 정보 플랫폼입니다.</p>
@@ -112,19 +45,7 @@
               </ol>
             </div>
           </section>
-
-          <section id="architecture" class="content-section detail-section">
-            <h2 class="section-title">아키텍처</h2>
-            <div class="section-content">
-              <div class="detail-media">
-                <button type="button" class="image-zoom-button" aria-label="KBO 아키텍처 다이어그램 확대 보기">
-                  <img src="./image/kbo/kbo_architecture.svg" alt="KBO 아키텍처 다이어그램" class="architecture-zoom-target">
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <section id="contributions" class="content-section detail-section">
+<section id="contributions" class="case-section">
             <h2 class="section-title">역할 및 기여</h2>
             <div class="section-content">
               <div class="detail-vertical">
@@ -150,16 +71,16 @@
                   <p>BeautifulSoup·Selenium으로 네이버 야구(KBO) 경기 일정 크롤링 로직 구현 및 Oracle DB 자동 적재</p>
                   <div class="detail-ui-gallery detail-ui-gallery--even">
                     <button type="button" class="image-zoom-button" aria-label="크롤링 화면 예시 1 확대 보기">
-                      <img src="./image/kbo/crawl_1.jpg" alt="크롤링 화면 예시 1">
+                      <img loading="lazy" src="./image/kbo/crawl_1.jpg" alt="크롤링 화면 예시 1">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="크롤링 화면 예시 2 확대 보기">
-                      <img src="./image/kbo/crawl_2.jpg" alt="크롤링 화면 예시 2">
+                      <img loading="lazy" src="./image/kbo/crawl_2.jpg" alt="크롤링 화면 예시 2">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="크롤링 화면 예시 3 확대 보기">
-                      <img src="./image/kbo/crawl_3.jpg" alt="크롤링 화면 예시 3">
+                      <img loading="lazy" src="./image/kbo/crawl_3.jpg" alt="크롤링 화면 예시 3">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="크롤링 화면 예시 4 확대 보기">
-                      <img src="./image/kbo/crawl_4.jpg" alt="크롤링 화면 예시 4">
+                      <img loading="lazy" src="./image/kbo/crawl_4.jpg" alt="크롤링 화면 예시 4">
                     </button>
                   </div>
                 </div>
@@ -174,7 +95,7 @@
                   <p>Spring Scheduler로 자동 크롤링 구현, 월요일 경기 없음 특성을 반영해 화~일요일만 동작하도록 최적화</p>
                   <div class="detail-media">
                     <button type="button" class="image-zoom-button" aria-label="스케줄링 설정 이미지 확대 보기">
-                      <img src="./image/kbo/schedule.jpg" alt="KBO 스케줄링 설정 화면">
+                      <img loading="lazy" src="./image/kbo/schedule.jpg" alt="KBO 스케줄링 설정 화면">
                     </button>
                   </div>
                 </div>
@@ -190,10 +111,10 @@
                   <p>야구 일정과 데이터를 직관적으로 확인할 수 있도록 UI 기획 및 레이아웃 구성</p>
                   <div class="detail-ui-gallery">
                     <button type="button" class="image-zoom-button" aria-label="KBO UI 화면 예시 1 확대 보기">
-                      <img src="./image/kbo/ui_1.jpg" alt="KBO UI 화면 예시 1">
+                      <img loading="lazy" src="./image/kbo/ui_1.jpg" alt="KBO UI 화면 예시 1">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="KBO UI 화면 예시 2 확대 보기">
-                      <img src="./image/kbo/ui_2.jpg" alt="KBO UI 화면 예시 2">
+                      <img loading="lazy" src="./image/kbo/ui_2.jpg" alt="KBO UI 화면 예시 2">
                     </button>
                   </div>
                 </div>
@@ -208,15 +129,24 @@
                   <p>Trello 칸반 보드로 일정 관리 주도, 작업 단위 세분화 및 우선순위 설정으로 개발 프로세스 효율화</p>
                   <div class="detail-media">
                     <button type="button" class="image-zoom-button" aria-label="Trello 협업 보드 이미지 확대 보기">
-                      <img src="./image/kbo/trello.jpeg" alt="Trello 협업 보드 화면">
+                      <img loading="lazy" src="./image/kbo/trello.jpeg" alt="Trello 협업 보드 화면">
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
-          <section id="retrospective" class="content-section detail-section">
+<section id="architecture" class="case-section">
+            <h2 class="section-title">아키텍처</h2>
+            <div class="section-content">
+              <div class="detail-media">
+                <button type="button" class="image-zoom-button" aria-label="KBO 아키텍처 다이어그램 확대 보기">
+                  <img loading="lazy" src="./image/kbo/kbo_architecture.svg" alt="KBO 아키텍처 다이어그램" class="architecture-zoom-target">
+                </button>
+              </div>
+            </div>
+          </section>
+<section id="retrospective" class="case-section">
             <h2 class="section-title">프로젝트 후기</h2>
             <div class="section-content">
               <div class="detail-duo">
@@ -240,222 +170,30 @@
               </div>
             </div>
           </section>
-
-          <section id="demo" class="content-section detail-section">
+<section id="demo" class="case-section">
             <h2 class="section-title section-title--with-hint">
               프로젝트 시연 영상
-              <span class="section-title-hint">클릭 시 처음부터 재생</span>
+              <span class="section-title-hint">버튼을 눌러 시연 불러오기</span>
             </h2>
             <div class="section-content">
               <div class="detail-duo">
                 <article class="detail-duo-card">
                   <h3>크롤링 시연</h3>
                   <div class="detail-media">
-                    <button type="button" class="gif-restart" aria-label="크롤링 시연 클릭 시 처음부터 재생">
-                      <img src="./image/kbo/crawling.gif" alt="크롤링 구조 변경 대응 시각화">
-                    </button>
+                    <button type="button" class="gif-restart" data-gif="./image/kbo/crawling.gif" aria-label="크롤링 구조 변경 대응 시각화 불러오기"><img src="image/kbo/ppt/1.jpg" alt="크롤링 구조 변경 대응 시각화 미리보기" loading="lazy"><span class="gif-action">▶ 시연 불러오기</span></button>
                   </div>
                 </article>
                 <article class="detail-duo-card">
                   <h3>전체 프로젝트 시연</h3>
                   <div class="detail-media">
-                    <button type="button" class="gif-restart" aria-label="전체 프로젝트 시연 클릭 시 처음부터 재생">
-                      <img src="./image/kbo/demo.gif" alt="KBO 프로젝트 시연 영상">
-                    </button>
+                    <button type="button" class="gif-restart" data-gif="./image/kbo/demo.gif" aria-label="KBO 프로젝트 시연 영상 불러오기"><img src="image/kbo/ppt/1.jpg" alt="KBO 프로젝트 시연 영상 미리보기" loading="lazy"><span class="gif-action">▶ 시연 불러오기</span></button>
                   </div>
                 </article>
               </div>
             </div>
           </section>
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <div class="image-modal" hidden aria-hidden="true" role="dialog" aria-label="이미지 확대 보기">
-    <div class="image-modal-backdrop" data-close="true"></div>
-    <div class="image-modal-content">
-      <button type="button" class="image-modal-close" aria-label="닫기">Close</button>
-      <img src="" alt="" class="image-modal-image">
-    </div>
-  </div>
-
-  <script>
-    (() => {
-      const slider = document.querySelector('.ppt-slider');
-      if (!slider) return;
-
-      const total = Number(slider.dataset.total || 0);
-      const track = slider.querySelector('.ppt-track');
-      const dotsWrap = slider.querySelector('.ppt-dots');
-      const counter = slider.querySelector('.ppt-counter');
-      const prevButton = slider.querySelector('.ppt-prev');
-      const nextButton = slider.querySelector('.ppt-next');
-      let currentIndex = 0;
-
-      if (!track || !dotsWrap || total <= 0) return;
-
-      const createSlide = (index) => {
-        const slide = document.createElement('div');
-        slide.className = 'ppt-slide';
-        const img = document.createElement('img');
-        img.src = `./image/kbo/ppt/${index}.jpg`;
-        img.alt = `KBO 프로젝트 PPT 화면 ${index}`;
-        img.loading = 'lazy';
-        slide.appendChild(img);
-        return slide;
-      };
-
-      const createDot = (index) => {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'ppt-dot';
-        dot.setAttribute('aria-label', `${index}번 슬라이드`);
-        dot.dataset.index = String(index - 1);
-        return dot;
-      };
-
-      for (let i = 1; i <= total; i += 1) {
-        track.appendChild(createSlide(i));
-        dotsWrap.appendChild(createDot(i));
-      }
-
-      const dots = Array.from(dotsWrap.querySelectorAll('.ppt-dot'));
-
-      const update = () => {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-          dot.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
-        });
-        if (counter) {
-          counter.textContent = `${currentIndex + 1} / ${total}`;
-        }
-      };
-
-      const goTo = (index) => {
-        currentIndex = (index + total) % total;
-        update();
-      };
-
-      const goNext = () => goTo(currentIndex + 1);
-      const goPrev = () => goTo(currentIndex - 1);
-
-      prevButton?.addEventListener('click', goPrev);
-      nextButton?.addEventListener('click', goNext);
-
-      dotsWrap.addEventListener('click', (event) => {
-        const target = event.target.closest('.ppt-dot');
-        if (!target) return;
-        const index = Number(target.dataset.index || '0');
-        goTo(index);
-      });
-
-      slider.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
-          goNext();
-        } else if (event.key === 'ArrowLeft') {
-          goPrev();
-        }
-      });
-
-      let touchStartX = 0;
-      let touchActive = false;
-      slider.addEventListener('touchstart', (event) => {
-        if (!event.touches || event.touches.length === 0) return;
-        touchStartX = event.touches[0].clientX;
-        touchActive = true;
-      }, { passive: true });
-
-      slider.addEventListener('touchend', (event) => {
-        if (!touchActive || !event.changedTouches || event.changedTouches.length === 0) return;
-        const touchEndX = event.changedTouches[0].clientX;
-        const delta = touchEndX - touchStartX;
-        if (Math.abs(delta) > 40) {
-          if (delta < 0) {
-            goNext();
-          } else {
-            goPrev();
-          }
-        }
-        touchActive = false;
-      }, { passive: true });
-
-      update();
-    })();
-
-    (() => {
-      const triggers = Array.from(document.querySelectorAll('.image-zoom-button'));
-      const modal = document.querySelector('.image-modal');
-      const modalImage = modal?.querySelector('.image-modal-image');
-      const closeButton = modal?.querySelector('.image-modal-close');
-      let lastTrigger = null;
-
-      if (triggers.length === 0 || !modal || !modalImage) return;
-
-      const openModal = (trigger) => {
-        const img = trigger.querySelector('img');
-        if (!img) return;
-        modalImage.src = img.currentSrc || img.src;
-        modalImage.alt = img.alt || '확대 이미지';
-        modal.hidden = false;
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        lastTrigger = trigger;
-        closeButton?.focus();
-      };
-
-      const closeModal = () => {
-        modal.hidden = true;
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        lastTrigger?.focus();
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener('click', () => openModal(trigger));
-        trigger.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openModal(trigger);
-          }
-        });
-      });
-
-      modal.addEventListener('click', (event) => {
-        if (event.target && event.target.closest('[data-close="true"]')) {
-          closeModal();
-        }
-      });
-
-      closeButton?.addEventListener('click', closeModal);
-
-      document.addEventListener('keydown', (event) => {
-        if (!modal.hidden && event.key === 'Escape') {
-          closeModal();
-        }
-      });
-    })();
-
-    (() => {
-      document.querySelectorAll('.gif-restart').forEach((button) => {
-        const img = button.querySelector('img');
-        if (!img) return;
-        button.addEventListener('click', () => {
-          const src = img.src;
-          img.src = '';
-          img.src = src;
-        });
-        button.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            const src = img.src;
-            img.src = '';
-            img.src = src;
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
+<section class="case-section" id="presentation"><h2 class="section-title">발표자료</h2><p class="presentation-description">전체 44장의 자료를 넘겨 보거나, 페이지 번호로 바로 이동할 수 있습니다.</p><div class="presentation-viewer" data-deck="kbo" data-count="44"><button class="image-zoom-button slide-image-button" type="button" aria-label="현재 발표자료 확대"><img class="slide-image" src="image/kbo/ppt/1.jpg" alt="발표자료 1페이지" loading="lazy"></button><div class="presentation-controls"><button class="slide-prev" type="button" aria-label="이전 페이지">← 이전</button><label class="page-input-label">페이지 <input class="slide-page" type="number" min="1" max="44" value="1" inputmode="numeric" aria-label="발표자료 페이지 번호"><span>/ 44</span></label><button class="slide-next" type="button" aria-label="다음 페이지">다음 →</button></div><p class="slide-announcement sr-only" aria-live="polite"></p></div></section>
+<div class="case-end"><a class="button button-secondary" href="index.html#projects" data-return>← 프로젝트 목록으로</a><a class="next-project" href="project-personal.html"><span>다른 프로젝트</span>AI 이미지 분석 · 뷰티 서비스 ↗</a></div>
+</main><footer class="site-footer container"><p>© 복권일</p><p>Backend Developer · Portfolio</p></footer>
+<dialog class="image-dialog" aria-label="이미지 확대 보기"><button class="dialog-close" type="button" aria-label="확대 이미지 닫기">닫기 ×</button><img class="dialog-image" alt=""></dialog>
+</body></html>

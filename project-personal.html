@@ -1,85 +1,18 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 이미지 분석 프로젝트 상세</title>
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/portfolio.css">
-</head>
-<body>
-  <div class="terminal-container">
-    <div class="terminal-header">
-      <div class="terminal-dots">
-        <div class="terminal-dot red"></div>
-        <div class="terminal-dot yellow"></div>
-        <div class="terminal-dot green"></div>
-      </div>
-      <div class="terminal-title">Portfolio</div>
-    </div>
-
-    <div class="terminal-content">
-      <aside class="sidebar">
-        <nav>
-          <a href="portfolio.html#projects" class="active sidebar-back">
-            <span class="nav-icon"><</span>
-            <span class="nav-text">back</span>
-          </a>
-          <hr class="sidebar-divider">
-          <div class="sidebar-section-title">sections</div>
-          <a href="#project-detail">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 소개</span>
-          </a>
-          <a href="#overview">
-            <span class="nav-icon">></span>
-            <span class="nav-text">개요</span>
-          </a>
-          <a href="#architecture">
-            <span class="nav-icon">></span>
-            <span class="nav-text">아키텍처</span>
-          </a>
-          <a href="#contributions">
-            <span class="nav-icon">></span>
-            <span class="nav-text">역할 및 기여</span>
-          </a>
-          <a href="#retrospective">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 후기</span>
-          </a>
-          <a href="#demo">
-            <span class="nav-icon">></span>
-            <span class="nav-text">프로젝트 시연 영상</span>
-          </a>
-        </nav>
-      </aside>
-
-      <div class="main-content">
-        <main class="shell">
-          <section id="project-detail" class="hero-section project-hero">
-            <div class="hero-content">
-              <div class="hero-text">
-                <p class="hero-kicker">Project</p>
-                <div class="hero-title-row">
-                  <h1 class="hero-name">AI 이미지 분석 (마스크 &amp; 퍼스널컬러)</h1>
-                  <span class="hero-period">2024.06.28 ~ 2024.07.18</span>
-                </div>
-                <div class="ppt-slider" data-total="73" tabindex="0" aria-label="AI 이미지 분석 프로젝트 주요 화면 슬라이드">
-                  <div class="ppt-viewport">
-                    <div class="ppt-track"></div>
-                  </div>
-                  <div class="ppt-controls">
-                    <button type="button" class="ppt-btn ppt-prev" aria-label="이전 슬라이드">Prev</button>
-                    <div class="ppt-dots" aria-hidden="false"></div>
-                    <div class="ppt-counter" aria-live="polite"></div>
-                    <button type="button" class="ppt-btn ppt-next" aria-label="다음 슬라이드">Next</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="overview" class="content-section detail-section">
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="마스크 감지, 퍼스널 컬러 진단, 가상 메이크업을 연결한 웹 서비스입니다. UI와 사용자 기능을 구현하고, AI 모델을 서비스에 연동했습니다."><meta name="theme-color" content="#ffffff">
+<title>AI 이미지 분석 · 뷰티 서비스 — 복권일 포트폴리오</title>
+<link rel="stylesheet" href="css/renewal.css"><link rel="stylesheet" href="css/case-study.css">
+<script src="js/case-study.js" defer></script>
+</head><body>
+<a class="skip-link" href="#main">본문으로 바로가기</a>
+<header class="site-header"><div class="container header-content"><a class="identity" href="index.html"><span class="identity-symbol" aria-hidden="true">k.</span><span>복권일<span class="identity-caption">PORTFOLIO</span></span></a><a class="case-back" href="index.html#projects" data-return>← 프로젝트 목록</a></div></header>
+<main id="main" class="container case-main">
+<div class="case-intro"><p class="overline">풀스택 개발 · AI 모델 연동</p><h1>AI 이미지 분석 · 뷰티 서비스</h1><p class="case-summary">마스크 감지, 퍼스널 컬러 진단, 가상 메이크업을 연결한 웹 서비스입니다. UI와 사용자 기능을 구현하고, AI 모델을 서비스에 연동했습니다.</p><dl class="case-facts"><div><dt>프로젝트 기간</dt><dd>2024.06.28 — 2024.07.18</dd></div><div><dt>담당 역할</dt><dd>UI 총괄 · 풀스택 개발 · 모델 연동</dd></div></dl><a class="text-link case-repo" href="https://github.com/Lottone27/java-project-AI-color" target="_blank" rel="noopener noreferrer">GitHub 저장소 보기 ↗</a></div>
+<figure class="case-cover"><img src="image/personal/perosnal.png" alt="AI 이미지 분석 · 뷰티 서비스 대표 화면" fetchpriority="high" width="1470" height="830"></figure>
+<nav class="case-toc" aria-label="프로젝트 내용"><a href="#overview">개요</a><a href="#contributions">역할과 기여</a><a href="#architecture">아키텍처</a><a href="#retrospective">회고</a><a href="#demo">시연</a><a href="#presentation">발표자료</a></nav>
+<section id="overview" class="case-section">
             <h2 class="section-title">개요</h2>
             <div class="section-content">
               <p class="detail-paragraph detail-paragraph--compact">마스크 감지·퍼스널 컬러 진단·가상 메이크업을 통합한 AI 뷰티 솔루션으로, 결과 관리와 문의 대응까지 포함해 사용자 흐름을 완성했습니다.</p>
@@ -112,19 +45,7 @@
               </ol>
             </div>
           </section>
-
-          <section id="architecture" class="content-section detail-section">
-            <h2 class="section-title">아키텍처</h2>
-            <div class="section-content">
-              <div class="detail-media">
-                <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 아키텍처 다이어그램 확대 보기">
-                  <img src="./image/personal/personalArci.svg" alt="AI 이미지 분석 아키텍처 다이어그램" class="architecture-zoom-target">
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <section id="contributions" class="content-section detail-section">
+<section id="contributions" class="case-section">
             <h2 class="section-title">역할 및 기여</h2>
             <div class="section-content">
               <div class="detail-vertical">
@@ -139,16 +60,16 @@
                   <p>메인 UI와 대표 디자인을 총괄 설계하고 컴포넌트 기준을 정립</p>
                   <div class="detail-ui-gallery detail-ui-gallery--wide">
                     <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 화면 예시 1 확대 보기">
-                      <img src="./image/personal/front_1.jpg" alt="AI 이미지 분석 화면 예시 1">
+                      <img loading="lazy" src="./image/personal/front_1.jpg" alt="AI 이미지 분석 화면 예시 1">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 화면 예시 2 확대 보기">
-                      <img src="./image/personal/front_2.jpg" alt="AI 이미지 분석 화면 예시 2">
+                      <img loading="lazy" src="./image/personal/front_2.jpg" alt="AI 이미지 분석 화면 예시 2">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 화면 예시 3 확대 보기">
-                      <img src="./image/personal/front_3.jpg" alt="AI 이미지 분석 화면 예시 3">
+                      <img loading="lazy" src="./image/personal/front_3.jpg" alt="AI 이미지 분석 화면 예시 3">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 화면 예시 4 확대 보기">
-                      <img src="./image/personal/front_4.jpg" alt="AI 이미지 분석 화면 예시 4">
+                      <img loading="lazy" src="./image/personal/front_4.jpg" alt="AI 이미지 분석 화면 예시 4">
                     </button>
                   </div>
                 </div>
@@ -163,10 +84,10 @@
                   <p>Q&A 게시판과 마이페이지를 백엔드까지 포함해 전 구간 구현</p>
                   <div class="detail-ui-gallery">
                     <button type="button" class="image-zoom-button" aria-label="Q&A 화면 확대 보기">
-                      <img src="./image/personal/qna.jpg" alt="Q&A 화면">
+                      <img loading="lazy" src="./image/personal/qna.jpg" alt="Q&A 화면">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="마이페이지 화면 확대 보기">
-                      <img src="./image/personal/mypage.jpg" alt="마이페이지 화면">
+                      <img loading="lazy" src="./image/personal/mypage.jpg" alt="마이페이지 화면">
                     </button>
                   </div>
                 </div>
@@ -181,10 +102,10 @@
                   <p>회원 관리 및 인증 흐름을 보조하는 관리자 기능을 추가</p>
                   <div class="detail-ui-gallery">
                     <button type="button" class="image-zoom-button" aria-label="관리자 기능 화면 1 확대 보기">
-                      <img src="./image/personal/admin_1.jpg" alt="관리자 기능 화면 1">
+                      <img loading="lazy" src="./image/personal/admin_1.jpg" alt="관리자 기능 화면 1">
                     </button>
                     <button type="button" class="image-zoom-button" aria-label="관리자 기능 화면 2 확대 보기">
-                      <img src="./image/personal/admin_2.jpg" alt="관리자 기능 화면 2">
+                      <img loading="lazy" src="./image/personal/admin_2.jpg" alt="관리자 기능 화면 2">
                     </button>
                   </div>
                 </div>
@@ -199,15 +120,24 @@
                   <p>오픈소스 모델을 Django 서버에 배치하고 서비스와의 크로스 통신을 구현</p>
                   <div class="detail-media">
                     <button type="button" class="image-zoom-button" aria-label="BeautyGAN 결과 이미지 확대 보기">
-                      <img src="./image/personal/beautygan.jpg" alt="BeautyGAN 결과 예시">
+                      <img loading="lazy" src="./image/personal/beautygan.jpg" alt="BeautyGAN 결과 예시">
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
-          <section id="retrospective" class="content-section detail-section">
+<section id="architecture" class="case-section">
+            <h2 class="section-title">아키텍처</h2>
+            <div class="section-content">
+              <div class="detail-media">
+                <button type="button" class="image-zoom-button" aria-label="AI 이미지 분석 아키텍처 다이어그램 확대 보기">
+                  <img loading="lazy" src="./image/personal/personalArci.svg" alt="AI 이미지 분석 아키텍처 다이어그램" class="architecture-zoom-target">
+                </button>
+              </div>
+            </div>
+          </section>
+<section id="retrospective" class="case-section">
             <h2 class="section-title">프로젝트 후기</h2>
             <div class="section-content">
               <div class="detail-duo">
@@ -222,20 +152,17 @@
               </div>
             </div>
           </section>
-
-          <section id="demo" class="content-section detail-section">
+<section id="demo" class="case-section">
             <h2 class="section-title">프로젝트 시연 영상</h2>
             <div class="section-content">
               <div class="detail-duo">
                 <article class="detail-duo-card">
                   <h3 class="detail-card-title detail-card-title--with-hint">
                     마스크 인식 시연
-                    <span class="detail-card-hint">클릭 시 처음부터 재생</span>
+                    <span class="detail-card-hint">버튼을 눌러 시연 불러오기</span>
                   </h3>
                   <div class="detail-media">
-                    <button type="button" class="gif-restart" aria-label="마스크 인식 시연 GIF 재생">
-                      <img src="./image/personal/mask.gif" alt="마스크 인식 여부 시연">
-                    </button>
+                    <button type="button" class="gif-restart" data-gif="./image/personal/mask.gif" aria-label="마스크 인식 여부 시연 불러오기"><img src="image/personal/ppt/1.jpg" alt="마스크 인식 여부 시연 미리보기" loading="lazy"><span class="gif-action">▶ 시연 불러오기</span></button>
                   </div>
                 </article>
                 <article class="detail-duo-card">
@@ -257,195 +184,8 @@
               </div>
             </div>
           </section>
-        </main>
-      </div>
-    </div>
-  </div>
-
-  <div class="image-modal" hidden aria-hidden="true" role="dialog" aria-label="이미지 확대 보기">
-    <div class="image-modal-backdrop" data-close="true"></div>
-    <div class="image-modal-content">
-      <button type="button" class="image-modal-close" aria-label="닫기">Close</button>
-      <img src="" alt="" class="image-modal-image">
-    </div>
-  </div>
-
-  <script>
-    (() => {
-      const slider = document.querySelector('.ppt-slider');
-      if (!slider) return;
-
-      const total = Number(slider.dataset.total || 0);
-      const track = slider.querySelector('.ppt-track');
-      const dotsWrap = slider.querySelector('.ppt-dots');
-      const counter = slider.querySelector('.ppt-counter');
-      const prevButton = slider.querySelector('.ppt-prev');
-      const nextButton = slider.querySelector('.ppt-next');
-      let currentIndex = 0;
-
-      if (!track || !dotsWrap || total <= 0) return;
-
-      const createSlide = (index) => {
-        const slide = document.createElement('div');
-        slide.className = 'ppt-slide';
-        const img = document.createElement('img');
-        img.src = `./image/personal/ppt/${index}.jpg`;
-        img.alt = `AI 이미지 분석 프로젝트 화면 ${index}`;
-        img.loading = 'lazy';
-        slide.appendChild(img);
-        return slide;
-      };
-
-      const createDot = (index) => {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'ppt-dot';
-        dot.setAttribute('aria-label', `${index}번 슬라이드`);
-        dot.dataset.index = String(index - 1);
-        return dot;
-      };
-
-      for (let i = 1; i <= total; i += 1) {
-        track.appendChild(createSlide(i));
-        dotsWrap.appendChild(createDot(i));
-      }
-
-      const dots = Array.from(dotsWrap.querySelectorAll('.ppt-dot'));
-
-      const update = () => {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-          dot.setAttribute('aria-current', index === currentIndex ? 'true' : 'false');
-        });
-        if (counter) {
-          counter.textContent = `${currentIndex + 1} / ${total}`;
-        }
-      };
-
-      const goTo = (index) => {
-        currentIndex = (index + total) % total;
-        update();
-      };
-
-      const goNext = () => goTo(currentIndex + 1);
-      const goPrev = () => goTo(currentIndex - 1);
-
-      prevButton?.addEventListener('click', goPrev);
-      nextButton?.addEventListener('click', goNext);
-
-      dotsWrap.addEventListener('click', (event) => {
-        const target = event.target.closest('.ppt-dot');
-        if (!target) return;
-        const index = Number(target.dataset.index || '0');
-        goTo(index);
-      });
-
-      slider.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
-          goNext();
-        } else if (event.key === 'ArrowLeft') {
-          goPrev();
-        }
-      });
-
-      let touchStartX = 0;
-      let touchActive = false;
-      slider.addEventListener('touchstart', (event) => {
-        if (!event.touches || event.touches.length === 0) return;
-        touchStartX = event.touches[0].clientX;
-        touchActive = true;
-      }, { passive: true });
-
-      slider.addEventListener('touchend', (event) => {
-        if (!touchActive || !event.changedTouches || event.changedTouches.length === 0) return;
-        const touchEndX = event.changedTouches[0].clientX;
-        const delta = touchEndX - touchStartX;
-        if (Math.abs(delta) > 40) {
-          if (delta < 0) {
-            goNext();
-          } else {
-            goPrev();
-          }
-        }
-        touchActive = false;
-      }, { passive: true });
-
-      update();
-    })();
-
-    (() => {
-      const triggers = Array.from(document.querySelectorAll('.image-zoom-button'));
-      const modal = document.querySelector('.image-modal');
-      const modalImage = modal?.querySelector('.image-modal-image');
-      const closeButton = modal?.querySelector('.image-modal-close');
-      let lastTrigger = null;
-
-      if (triggers.length === 0 || !modal || !modalImage) return;
-
-      const openModal = (trigger) => {
-        const img = trigger.querySelector('img');
-        if (!img) return;
-        modalImage.src = img.currentSrc || img.src;
-        modalImage.alt = img.alt || '확대 이미지';
-        modal.hidden = false;
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        lastTrigger = trigger;
-        closeButton?.focus();
-      };
-
-      const closeModal = () => {
-        modal.hidden = true;
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        lastTrigger?.focus();
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener('click', () => openModal(trigger));
-        trigger.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openModal(trigger);
-          }
-        });
-      });
-
-      modal.addEventListener('click', (event) => {
-        if (event.target && event.target.closest('[data-close="true"]')) {
-          closeModal();
-        }
-      });
-
-      closeButton?.addEventListener('click', closeModal);
-
-      document.addEventListener('keydown', (event) => {
-        if (!modal.hidden && event.key === 'Escape') {
-          closeModal();
-        }
-      });
-    })();
-
-    (() => {
-      document.querySelectorAll('.gif-restart').forEach((button) => {
-        const img = button.querySelector('img');
-        if (!img) return;
-        button.addEventListener('click', () => {
-          const src = img.src;
-          img.src = '';
-          img.src = src;
-        });
-        button.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            const src = img.src;
-            img.src = '';
-            img.src = src;
-          }
-        });
-      });
-    })();
-  </script>
-</body>
-</html>
+<section class="case-section" id="presentation"><h2 class="section-title">발표자료</h2><p class="presentation-description">전체 73장의 자료를 넘겨 보거나, 페이지 번호로 바로 이동할 수 있습니다.</p><div class="presentation-viewer" data-deck="personal" data-count="73"><button class="image-zoom-button slide-image-button" type="button" aria-label="현재 발표자료 확대"><img class="slide-image" src="image/personal/ppt/1.jpg" alt="발표자료 1페이지" loading="lazy"></button><div class="presentation-controls"><button class="slide-prev" type="button" aria-label="이전 페이지">← 이전</button><label class="page-input-label">페이지 <input class="slide-page" type="number" min="1" max="73" value="1" inputmode="numeric" aria-label="발표자료 페이지 번호"><span>/ 73</span></label><button class="slide-next" type="button" aria-label="다음 페이지">다음 →</button></div><p class="slide-announcement sr-only" aria-live="polite"></p></div></section>
+<div class="case-end"><a class="button button-secondary" href="index.html#projects" data-return>← 프로젝트 목록으로</a><a class="next-project" href="project-kbo.html"><span>다른 프로젝트</span>KBO 리그 통합 데이터 플랫폼 ↗</a></div>
+</main><footer class="site-footer container"><p>© 복권일</p><p>Backend Developer · Portfolio</p></footer>
+<dialog class="image-dialog" aria-label="이미지 확대 보기"><button class="dialog-close" type="button" aria-label="확대 이미지 닫기">닫기 ×</button><img class="dialog-image" alt=""></dialog>
+</body></html>
