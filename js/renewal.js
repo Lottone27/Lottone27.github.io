@@ -1,4 +1,28 @@
 (() => {
+  // Continuous employment since January 2025; show completed calendar months in Korea.
+  function updateCareerDuration() {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Seoul', year: 'numeric', month: 'numeric'
+    }).formatToParts(new Date());
+    const year = Number(parts.find(part => part.type === 'year').value);
+    const month = Number(parts.find(part => part.type === 'month').value);
+    document.querySelectorAll('[data-career-start]').forEach(element => {
+      const [startYear, startMonth] = element.dataset.careerStart.split('-').map(Number);
+      if (!startYear || startMonth < 1 || startMonth > 12) return;
+      const months = Math.max(0, (year - startYear) * 12 + month - startMonth);
+      const years = Math.floor(months / 12);
+      const remainder = months % 12;
+      element.textContent = [years ? years + '년' : '', remainder ? remainder + '개월' : ''].filter(Boolean).join(' ') || '1개월 미만';
+    });
+  }
+  updateCareerDuration();
+  window.addEventListener('pageshow', updateCareerDuration);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) updateCareerDuration();
+  });
+  // Also refresh when an open tab crosses into a new month.
+  setInterval(updateCareerDuration, 60 * 1000);
+
   let toastTimer;
   const toast = document.getElementById('toast');
   function showToast(message) {
